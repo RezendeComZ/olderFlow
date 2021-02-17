@@ -1,4 +1,4 @@
-console.log('v9')
+console.log('v14')
 
 function qSelector(select) {
   return document.querySelector(select)
@@ -12,14 +12,22 @@ let postDate = new Date(postDateArray[0], postDateArray[1],postDateArray[2], pos
 let differenceInTime = dateNow.getTime() - postDate.getTime()
 let differenceInDays = parseInt(differenceInTime / (1000 * 3600 * 24)); 
 
-if (differenceInDays > 4200) {
-  postDateDiv.style.backgroundColor = 'green'
+// 10 anos: 3600
+
+// let daysInHSL = (100 * differenceInDays) / 3600 // 10 years
+let daysInHSL = parseInt((360 * differenceInDays) / 3600) // 10 years
+
+if (daysInHSL > 360) {
+  postDateDiv.style.backgroundColor = `hsl(360, 100%, 50%)`
+
 } else {
-  postDateDiv.style.backgroundColor = 'red'
+  postDateDiv.style.backgroundColor = `hsl(${daysInHSL}, 100%, 50%)`
 }
 
-console.log(postDate)
-console.log(differenceInTime)
-console.log(differenceInDays)
+// console.log(postDate)
+// console.log(differenceInTime)
+// console.log(differenceInDays)
+// console.log(daysInHSL)
+// console.log(postDateDiv.style.backgroundColor)
 
 
