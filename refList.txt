@@ -1,0 +1,16 @@
+// For testing purposes only //
+
+ES6:
+2017:
+https://stackoverflow.com/questions/47973057/chrome-extension-how-to-delay-script-until-page-is-fully-loaded
+
+2015 after June 1st:
+https://stackoverflow.com/questions/30922008/calculate-percentage-javascript
+
+Before ES6:
+
+2015 before June:
+https://stackoverflow.com/questions/28525393/how-can-i-get-rid-of-the-this-keyword-in-local-functions
+
+2008:
+https://stackoverflow.com/questions/154059/how-can-i-check-for-an-empty-undefined-null-string-in-javascript
