@@ -16,11 +16,14 @@ let differenceInTime = dateNow.getTime() - postDate.getTime()
 let differenceInDays = parseInt(differenceInTime / (1000 * 3600 * 24)); 
 
 // Background color
-let daysInHSL = parseInt((360 * differenceInDays) / 3600) // 360 (HSL max value), 3600 (10 years)
+let daysInHSL = parseInt((360 * differenceInDays) / 3600) // 360 (HSL max value), 3600 (10 years) 
 if (daysInHSL > 360) {
   postDateDiv.style.backgroundColor = `hsl(360, 100%, 60%)`
 
-} else {
+} else if (daysInHSL < 90) {
+  postDateDiv.style.backgroundColor = `hsl(90, 100%, 60%)`
+}
+  else {
   postDateDiv.style.backgroundColor = `hsl(${daysInHSL}, 100%, 60%)`
 }
 
