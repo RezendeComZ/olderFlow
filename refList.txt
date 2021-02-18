@@ -12,5 +12,8 @@ Before ES6:
 2015 before June:
 https://stackoverflow.com/questions/28525393/how-can-i-get-rid-of-the-this-keyword-in-local-functions
 
+2009:
+https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript
+
 2008:
-https://stackoverflow.com/questions/154059/how-can-i-check-for-an-empty-undefined-null-string-in-javascript
+https://stackoverflow.com/questions/107701/how-can-i-remove-ds-store-files-from-a-git-repository
