@@ -1,38 +1,46 @@
 function qSelector(select) {
   return document.querySelector(select)
 }
-
+function differenceInDays(date) {
+  let differenceInTime = dateNow.getTime() - date.getTime();
+  return parseInt(differenceInTime / (1000 * 3600 * 24)); 
+}
+function processedDate(div) {
+  let postDateArray = qSelector(div).dateTime.split(/[:+T+\-]/);
+  return new Date(postDateArray[0], postDateArray[1],postDateArray[2], postDateArray[3],postDateArray[4]);
+}
 let dateNow = new Date();
-let postDateDiv  = qSelector('time')
 
-// Style
-postDateDiv.style.color = 'white'
-postDateDiv.style.padding = '5px 5px 5px 8px'
-postDateDiv.style.borderRadius = '20px 0px 0px 20px'
+// Question
+let questionDateDiv  = qSelector('time')
+let questionDate = processedDate('time')
 
-// Date processing
-let postDateArray = postDateDiv.dateTime.split(/[:+T+\-]/)
-let postDate = new Date(postDateArray[0], postDateArray[1],postDateArray[2], postDateArray[3],postDateArray[4]);
-let differenceInTime = dateNow.getTime() - postDate.getTime()
-let differenceInDays = parseInt(differenceInTime / (1000 * 3600 * 24)); 
+// Question Style
+questionDateDiv.style.color = 'white'
+questionDateDiv.style.padding = '5px 5px 5px 8px'
+questionDateDiv.style.borderRadius = '20px 0px 0px 20px'
+
+
 
 // Background color
-let daysInHSL = parseInt((360 * differenceInDays) / 3600) // 360 (HSL max value), 3600 (10 years) 
+let daysInHSL = parseInt((360 * differenceInDays(questionDate)) / 3600) // 360 (HSL max value), 3600 (10 years) 
 if (daysInHSL > 360) {
-  postDateDiv.style.backgroundColor = `hsl(360, 100%, 60%)`
+  questionDateDiv.style.backgroundColor = `hsl(360, 100%, 60%)`
 
 } else if (daysInHSL < 90) {
-  postDateDiv.style.backgroundColor = `hsl(90, 100%, 60%)`
+  questionDateDiv.style.backgroundColor = `hsl(90, 100%, 60%)`
 }
   else {
-  postDateDiv.style.backgroundColor = `hsl(${daysInHSL}, 100%, 60%)`
+  questionDateDiv.style.backgroundColor = `hsl(${daysInHSL}, 100%, 60%)`
 }
 if (daysInHSL < 190) {
-  postDateDiv.style.color = 'black'
+  questionDateDiv.style.color = 'black'
 }
 
 // Warning
+let emoji = '';
 let parentTime = document.querySelector('div.ws-nowrap:nth-child(1)');
+parentTime.style.transform = 'scale(1.1)'
 parentTime.innerHTML += '<span id="warning"></span>';
 let warningStyle = qSelector('#warning')
 warningStyle.style.color = 'white'
@@ -40,14 +48,22 @@ warningStyle.style.backgroundColor = 'green'
 warningStyle.style.padding = '5px 8px 5px 5px'
 warningStyle.style.borderRadius = '0px 20px 20px 0px'
 
-if (postDate.getFullYear() < 2015 || postDate.getFullYear() == 2015 && postDate.getMonth() < 6) { //
+if (questionDate.getFullYear() < 2015 || questionDate.getFullYear() == 2015 && questionDate.getMonth() < 6) { //
   warningStyle.innerText = 'pre-ES6';
   warningStyle.style.backgroundColor = 'orange'
-  } else if (postDate.getFullYear() == 2015 && postDate.getMonth() >= 6){
+  emoji = '🟠'
+  } else if (questionDate.getFullYear() == 2015 && questionDate.getMonth() >= 6){
    warningStyle.innerText = 'ES6';
    warningStyle.style.backgroundColor = 'green'
+   emoji = '🔵'
   } else {
     warningStyle.innerText = 'ES6+';
     // warningStyle.innerText.style.color = 'black';
+    emoji = '🟢'
    warningStyle.style.backgroundColor = `rgb(50, 205, 50)`
  }
+
+// Title emoji
+// TODO: Check system support for Unicode 12
+ newTitle = `${emoji} `+ document.querySelector('title').textContent
+qSelector('title').textContent = newTitle
