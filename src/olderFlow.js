@@ -6,6 +6,7 @@ let dateNow = new Date();
 let postDateDiv  = qSelector('time')
 
 // Style
+postDateDiv.style.color = 'white'
 postDateDiv.style.padding = '5px 5px 5px 8px'
 postDateDiv.style.borderRadius = '20px 0px 0px 20px'
 
@@ -25,6 +26,9 @@ if (daysInHSL > 360) {
 }
   else {
   postDateDiv.style.backgroundColor = `hsl(${daysInHSL}, 100%, 60%)`
+}
+if (daysInHSL < 190) {
+  postDateDiv.style.color = 'black'
 }
 
 // Warning
