@@ -1,14 +1,14 @@
 // For testing purposes only //
 
-ES6:
-2017:
+ES6+:
+2017 after June:
 https://stackoverflow.com/questions/47973057/chrome-extension-how-to-delay-script-until-page-is-fully-loaded
 
-2015 after June 1st:
+ES6:
+2015 after June:
 https://stackoverflow.com/questions/30922008/calculate-percentage-javascript
 
-Before ES6:
-
+Pre-ES6:
 2015 before June:
 https://stackoverflow.com/questions/28525393/how-can-i-get-rid-of-the-this-keyword-in-local-functions
 
