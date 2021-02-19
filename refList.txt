@@ -17,3 +17,7 @@ https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-jav
 
 2008:
 https://stackoverflow.com/questions/107701/how-can-i-remove-ds-store-files-from-a-git-repository
+
+// Answers:
+First answer with edit:
+https://stackoverflow.com/questions/107701/how-can-i-remove-ds-store-files-from-a-git-repository
