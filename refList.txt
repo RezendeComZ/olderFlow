@@ -21,3 +21,6 @@ https://stackoverflow.com/questions/107701/how-can-i-remove-ds-store-files-from-
 // Answers:
 First answer with edit:
 https://stackoverflow.com/questions/107701/how-can-i-remove-ds-store-files-from-a-git-repository
+
+First answer without edit:
+https://stackoverflow.com/questions/59017827/google-cloud-build-always-connects-to-wrong-github-account
