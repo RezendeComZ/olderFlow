@@ -70,18 +70,6 @@ if (questionDate.getFullYear() >= 2016 && questionDate.getMonth() > 4) {
   preES6();
 }
 
-// if (questionDate.getFullYear() <= 2015) { //
-//   if (questionDate.getFullYear() == 2015 && questionDate.getMonth() > 5) {
-//     es6();
-//   } else {
-//     preES6();
-//   }
-// } else if (questionDate.getFullYear() == 2016 && questionDate.getMonth() < 6){
-//   es6();
-// } else {
-//   es6Plus();
-//  }
-
 // Title emoji
 // TODO: Check system support for Unicode 12
 function emojiStatus(status) {
