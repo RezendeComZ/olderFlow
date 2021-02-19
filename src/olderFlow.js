@@ -5,22 +5,16 @@ function differenceInDays(date) {
   let differenceInTime = dateNow.getTime() - date.getTime();
   return parseInt(differenceInTime / (1000 * 3600 * 24)); 
 }
-function processedDate(div) {
-  let postDateArray = qSelector(div).dateTime.split(/[:+T+\-]/);
-  return new Date(postDateArray[0], postDateArray[1],postDateArray[2], postDateArray[3],postDateArray[4]);
-}
 let dateNow = new Date();
 
 // Question
 let questionDateDiv  = qSelector('time')
-let questionDate = processedDate('time')
+let questionDate = new Date(questionDateDiv.dateTime)
 
 // Question Style
 questionDateDiv.style.color = 'white'
 questionDateDiv.style.padding = '5px 5px 5px 8px'
 questionDateDiv.style.borderRadius = '20px 0px 0px 20px'
-
-
 
 // Background color
 let daysInHSL = parseInt((360 * differenceInDays(questionDate)) / 3600) // 360 (HSL max value), 3600 (10 years) 
