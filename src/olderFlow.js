@@ -5,23 +5,16 @@ function differenceInDays(date) {
   let differenceInTime = dateNow.getTime() - date.getTime();
   return parseInt(differenceInTime / (1000 * 3600 * 24)); 
 }
-function dateStyle(div) {
-  div.style.color = 'white'
-  div.style.padding = '5px 5px 5px 8px'
-  div.style.borderRadius = '20px 0px 0px 20px'
-}
-
 let dateNow = new Date();
 
 // Question
 let questionDateDiv  = qSelector('time')
 let questionDate = new Date(questionDateDiv.dateTime)
-dateStyle(questionDateDiv);
 
 // Question Style
-// questionDateDiv.style.color = 'white'
-// questionDateDiv.style.padding = '5px 5px 5px 8px'
-// questionDateDiv.style.borderRadius = '20px 0px 0px 20px'
+questionDateDiv.style.color = 'white'
+questionDateDiv.style.padding = '5px 5px 5px 8px'
+questionDateDiv.style.borderRadius = '20px 0px 0px 20px'
 
 // Background color
 let daysInHSL = parseInt((360 * differenceInDays(questionDate)) / 3600) // 360 (HSL max value), 3600 (10 years) 
@@ -49,22 +42,54 @@ warningStyle.style.backgroundColor = 'green'
 warningStyle.style.padding = '5px 8px 5px 5px'
 warningStyle.style.borderRadius = '0px 20px 20px 0px'
 
-if (questionDate.getFullYear() < 2015 || questionDate.getFullYear() == 2015 && questionDate.getMonth() < 6) { //
+function es6() {
+  warningStyle.innerText = 'ES6';
+  warningStyle.style.backgroundColor = 'green'
+  emojiStatus('old')
+  console.log('ES6')
+}
+function preES6() {
   warningStyle.innerText = 'pre-ES6';
   warningStyle.style.backgroundColor = 'orange'
-  emoji = '🟠'
-  } else if (questionDate.getFullYear() == 2015 && questionDate.getMonth() >= 6){
-   warningStyle.innerText = 'ES6';
-   warningStyle.style.backgroundColor = 'green'
-   emoji = '🔵'
-  } else {
-    warningStyle.innerText = 'ES6+';
-    // warningStyle.innerText.style.color = 'black';
-    emoji = '🟢'
-   warningStyle.style.backgroundColor = `rgb(50, 205, 50)`
- }
+  emojiStatus('older')
+  console.log('pre-ES6: ' + questionDate.getFullYear())
+}
+function es6Plus() {
+  warningStyle.innerText = 'ES6+';
+  emojiStatus('new')
+  warningStyle.style.backgroundColor = `rgb(50, 205, 50)`
+  console.log('ES6+')
+}
+/// NOT WORKING AS EXPECTED!! Fazer amanha: if es6 +, else if es6, else pre-es6
+// New If:
+if (questionDate.getFullYear() >= 2016 && questionDate.getMonth() > 4) {
+  es6Plus();
+} else if(questionDate.getFullYear() == 2015 && questionDate.getMonth() > 4) {
+  es6();
+} else {
+  preES6();
+}
+
+// if (questionDate.getFullYear() <= 2015) { //
+//   if (questionDate.getFullYear() == 2015 && questionDate.getMonth() > 5) {
+//     es6();
+//   } else {
+//     preES6();
+//   }
+// } else if (questionDate.getFullYear() == 2016 && questionDate.getMonth() < 6){
+//   es6();
+// } else {
+//   es6Plus();
+//  }
 
 // Title emoji
 // TODO: Check system support for Unicode 12
- newTitle = `${emoji} `+ document.querySelector('title').textContent
+function emojiStatus(status) {
+  if (status == 'older') emoji = '🟠'
+  if (status == 'old') emoji = '🔵'
+  if (status == 'new') emoji = '🟢'
+}
+
+
+newTitle = `${emoji} `+ document.querySelector('title').textContent
 qSelector('title').textContent = newTitle
