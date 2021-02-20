@@ -1,3 +1,8 @@
+/* TODO
+- Create an exception on StackExchange to not use "warning function"
+- Show on Google/Duck/Bing/Yahoo a color tag 'Asked about two years ago'(based on on: https://stackoverflow.com/questions/:id)
+*/
+
 let dateNow = new Date();
 
 function qSelector(select) {
@@ -70,8 +75,23 @@ function warning(div, emojiOnTitle) {
   if (emojiOnTitle) titleEmoji();
 }
 
-
 // Question
 let questionDateDiv  = qSelector('time')
 let questionDate = new Date(questionDateDiv.dateTime)
 timeStyleAndProcessing(questionDate, questionDateDiv, true, true)
+
+// Answers (edited)
+let answersAll = document.querySelectorAll('.relativetime')
+let answersArray = Array.from(answersAll);
+
+// if question was eddited
+//
+// else:
+answersArray.shift(); // asked tag date from question
+
+answersArray.forEach(div => {
+  let answerDate = new Date(div.title)
+  div.style.backgroundColor = `rgb(50, 205, 50)`
+  timeStyleAndProcessing(answerDate, div, true, false)
+  console.log(answerDate)
+})
