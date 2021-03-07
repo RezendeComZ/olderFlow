@@ -1,9 +1,12 @@
 /* TODO
 - Create an exception on StackExchange to not use "warning function"
 - Show on Google/Duck/Bing/Yahoo a color tag 'Asked about two years ago'(based on on: https://stackoverflow.com/questions/:id)
+- Accepted answer direct link from search
+- Customize title
 */
 
 let dateNow = new Date();
+
 
 function qSelector(select) {
   return document.querySelector(select)
@@ -42,6 +45,7 @@ function warning(div, emojiOnTitle) {
     let newTitle = `${emoji} `+ document.querySelector('title').textContent
     qSelector('title').textContent = newTitle
   }
+  
   questionDateDiv.style.borderRadius = '20px 0px 0px 20px'
   div.outerHTML += '<span id="warning"></span>';
   let warningStyle = qSelector('#warning')
@@ -76,22 +80,56 @@ function warning(div, emojiOnTitle) {
 }
 
 // Question
-let questionDateDiv  = qSelector('time')
+let questionDateDiv = qSelector('time')
 let questionDate = new Date(questionDateDiv.dateTime)
 timeStyleAndProcessing(questionDate, questionDateDiv, true, true)
 
 // Answers (edited)
-let answersAll = document.querySelectorAll('.relativetime')
-let answersArray = Array.from(answersAll);
+let answersAll = Array.from(document.querySelectorAll('.relativetime'))
 
-// if question was eddited
-//
-// else:
-answersArray.shift(); // asked tag date from question
-
-answersArray.forEach(div => {
+answersAll.forEach(div => {
   let answerDate = new Date(div.title)
   div.style.backgroundColor = `rgb(50, 205, 50)`
   timeStyleAndProcessing(answerDate, div, true, false)
-  console.log(answerDate)
 })
+
+// First Answer
+let firstAnswerDiv = document.getElementsByClassName('answer accepted-answer')[0].getElementsByClassName('relativetime')[0]
+let firstAnswerYear = 20 + firstAnswerDiv.innerText.split(' ')[2].slice(1)
+let firstAnswerDate = new Date(firstAnswerYear, 5)
+
+// Daqui...
+const firstAnswerLinkPath = 'html.html__responsive body.question-page.unified-theme div.container div#content.snippet-hidden div div.inner-content.clearfix div.grid.fw-wrap.pb8.mb16.bb.bc-black-075 div.grid--cell.ws-nowrap.mr16.mb8';
+const firstAnswerLinkDiv = document.querySelector(firstAnswerLinkPath)
+
+firstAnswerLinkDiv.outerHTML += `<div class="grid--cell ws-nowrap mr16 mb8"><div id="answerLink">✅: <a>${firstAnswerDate.getFullYear()}</a></div></div>`;
+// ...Até aqui, talvez seja temporário
+
+
+let answerLink = document.getElementById('answerLink')
+let acceptedAnswer = document.querySelector(".accepted-answer");
+
+answerLink.addEventListener('click', () => {
+  acceptedAnswer.scrollIntoView();
+})
+
+timeStyleAndProcessing(firstAnswerDate, document.getElementById('answerLink'), false, false)
+// answerLink.style.textDecoration = 'underline'
+  
+
+
+
+// Direct to accept answer // WIP
+// let direct = 'WIP' // window.location.pathname
+// if (direct == window.location.pathname) {
+//   let acceptedAnswer = document.querySelector(".accepted-answer");
+//   acceptedAnswer.id += ' acceptedLink'
+//   acceptedAnswer.scrollIntoView();
+// }
+
+// Google - english
+
+// let datesTxtDivs = Array.from(document.getElementsByClassName('f'))
+// datesTxtDivs[0].style.color = 'green'
+// timeStyleAndProcessing(answerDate, div, true, false)
+// document.getElementsByClassName('f')[0].parentElement.parentElement.parentElement.parentElement.getElementsByTagName('a')[0].href
