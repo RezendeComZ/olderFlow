@@ -99,17 +99,10 @@ let firstAnswerDiv = document.getElementsByClassName('answer accepted-answer')[0
 let firstAnswerYear = 20 + firstAnswerDiv.innerText.split(' ')[2].slice(1)
 let firstAnswerDate = new Date(firstAnswerYear, 5)
 
-// Daqui...
 const firstAnswerLinkPath = 'html.html__responsive body.question-page.unified-theme div.container div#content.snippet-hidden div div.inner-content.clearfix div.grid.fw-wrap.pb8.mb16.bb.bc-black-075 div.grid--cell.ws-nowrap.mr16.mb8';
 const firstAnswerLinkDiv = document.querySelector(firstAnswerLinkPath)
 
-firstAnswerLinkDiv.outerHTML += `<div class="grid--cell ws-nowrap mr16 mb8"><div id="answerLink">✅: <a>${firstAnswerDate.getFullYear()}</a></div></div>`;
-// ...Até aqui, talvez seja temporário
-
-// Novo esquema
-// const answerLinkDiv = document.createElement('div');
-// answerLinkDiv.innerHTML = `<div id="answerLink">✅: <a>${firstAnswerDate.getFullYear()}</a></div>`
-// document.getElementById('question-header').appendChild(answerLinkDiv)
+firstAnswerLinkDiv.outerHTML += `<a><div class="grid--cell ws-nowrap mr16 mb8"><span id="answerLink">✅: <span style="text-shadow: 2px 2px 7px white">${firstAnswerDate.getFullYear()}</span></span></div></a>`;
 
 let answerLink = document.getElementById('answerLink')
 let acceptedAnswer = document.querySelector(".accepted-answer");
