@@ -7,7 +7,6 @@
 
 let dateNow = new Date();
 
-
 function qSelector(select) {
   return document.querySelector(select)
 }
@@ -73,6 +72,8 @@ function warning(div, emojiOnTitle) {
     es6Plus();
   } else if(questionDate.getFullYear() == 2015 && questionDate.getMonth() > 4) {
     es6();
+  } else if (questionDate.getFullYear() >= 2016) {
+    es6();    
   } else {
     preES6();
   }
@@ -82,7 +83,7 @@ function warning(div, emojiOnTitle) {
 // Question
 let questionDateDiv = qSelector('time')
 let questionDate = new Date(questionDateDiv.dateTime)
-timeStyleAndProcessing(questionDate, questionDateDiv, true, true)
+timeStyleAndProcessing(questionDate, questionDateDiv, true, false)
 document.querySelector('time').setAttribute('id','tempo')
 
 // Answers (edited)
@@ -91,7 +92,7 @@ let answersAll = Array.from(document.querySelectorAll('.relativetime'))
 answersAll.forEach(div => {
   let answerDate = new Date(div.title)
   div.style.backgroundColor = `rgb(50, 205, 50)`
-  timeStyleAndProcessing(answerDate, div, true, false)
+  timeStyleAndProcessing(answerDate, div, false, false)
 })
 
 // First Answer
