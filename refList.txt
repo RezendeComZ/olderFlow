@@ -1,5 +1,7 @@
 // For testing purposes only //
 
+// Stackoverflow:
+
 ES6+:
 2017 after June:
 https://stackoverflow.com/questions/47973057/chrome-extension-how-to-delay-script-until-page-is-fully-loaded
@@ -24,3 +26,8 @@ https://stackoverflow.com/questions/107701/how-can-i-remove-ds-store-files-from-
 
 First answer without edit:
 https://stackoverflow.com/questions/59017827/google-cloud-build-always-connects-to-wrong-github-account
+
+// Stackexchange
+
+2015:
+https://meta.stackexchange.com/questions/248249/is-it-possible-to-embed-videos-in-questions
