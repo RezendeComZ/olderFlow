@@ -4,11 +4,21 @@
   "name": "OlderFlow",
   "version": "1.0",
 
+  "developer": {
+  "name": "Gabriel Rezende",
+   "url": "https://github.com/rezendecomz/olderFlow"
+  },
+
   "description": "A WIP WebExtension",
 
   "icons": {
     "48": "icons/cancel-48.png",
     "96": "icons/cancel-96.png"
+  },
+
+  "options_ui": {
+  "page": "pages/options.html",
+  "browser_style": true
   },
 
   "content_scripts": [
