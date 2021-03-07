@@ -83,6 +83,7 @@ function warning(div, emojiOnTitle) {
 let questionDateDiv = qSelector('time')
 let questionDate = new Date(questionDateDiv.dateTime)
 timeStyleAndProcessing(questionDate, questionDateDiv, true, true)
+document.querySelector('time').setAttribute('id','tempo')
 
 // Answers (edited)
 let answersAll = Array.from(document.querySelectorAll('.relativetime'))
@@ -105,6 +106,10 @@ const firstAnswerLinkDiv = document.querySelector(firstAnswerLinkPath)
 firstAnswerLinkDiv.outerHTML += `<div class="grid--cell ws-nowrap mr16 mb8"><div id="answerLink">✅: <a>${firstAnswerDate.getFullYear()}</a></div></div>`;
 // ...Até aqui, talvez seja temporário
 
+// Novo esquema
+// const answerLinkDiv = document.createElement('div');
+// answerLinkDiv.innerHTML = `<div id="answerLink">✅: <a>${firstAnswerDate.getFullYear()}</a></div>`
+// document.getElementById('question-header').appendChild(answerLinkDiv)
 
 let answerLink = document.getElementById('answerLink')
 let acceptedAnswer = document.querySelector(".accepted-answer");
