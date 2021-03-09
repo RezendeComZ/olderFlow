@@ -25,6 +25,10 @@
     {
       "matches": ["https://*.stackoverflow.com/*", "https://*.stackexchange.com/*"],
       "js": ["olderFlow.js"]
+    },
+    {
+    "matches": ["*://*.google.com/*"],
+    "js": ["google.js"]
     }
   ]
 
