@@ -6,6 +6,8 @@
 */
 
 let dateNow = new Date();
+let warningState = true;
+let emojiState = true;
 
 function qSelector(select) {
   return document.querySelector(select)
@@ -83,7 +85,7 @@ function warning(div, emojiOnTitle) {
 // Question
 let questionDateDiv = qSelector('time')
 let questionDate = new Date(questionDateDiv.dateTime)
-timeStyleAndProcessing(questionDate, questionDateDiv, true, false)
+timeStyleAndProcessing(questionDate, questionDateDiv, warningState, emojiState)
 document.querySelector('time').setAttribute('id','tempo')
 
 // Answers (edited)
@@ -126,9 +128,3 @@ timeStyleAndProcessing(firstAnswerDate, document.getElementById('answerLink'), f
 //   acceptedAnswer.scrollIntoView();
 // }
 
-// Google - english
-
-// let datesTxtDivs = Array.from(document.getElementsByClassName('f'))
-// datesTxtDivs[0].style.color = 'green'
-// timeStyleAndProcessing(answerDate, div, true, false)
-// document.getElementsByClassName('f')[0].parentElement.parentElement.parentElement.parentElement.getElementsByTagName('a')[0].href
