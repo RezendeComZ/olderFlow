@@ -5,6 +5,9 @@
 - Customize title
 */
 
+
+
+
 let dateNow = new Date();
 let warningState = true;
 let emojiState = true;
@@ -86,7 +89,6 @@ function warning(div, emojiOnTitle) {
 let questionDateDiv = qSelector('time')
 let questionDate = new Date(questionDateDiv.dateTime)
 timeStyleAndProcessing(questionDate, questionDateDiv, warningState, emojiState)
-document.querySelector('time').setAttribute('id','tempo')
 
 // Answers (edited)
 let answersAll = Array.from(document.querySelectorAll('.relativetime'))
@@ -109,22 +111,17 @@ firstAnswerLinkDiv.outerHTML += `<a><div class="grid--cell ws-nowrap mr16 mb8"><
 
 let answerLink = document.getElementById('answerLink')
 let acceptedAnswer = document.querySelector(".accepted-answer");
+document.querySelector('.accepted-answer').setAttribute('id','acceptedID')
 
 answerLink.addEventListener('click', () => {
   acceptedAnswer.scrollIntoView();
 })
 
+
 timeStyleAndProcessing(firstAnswerDate, document.getElementById('answerLink'), false, false)
-// answerLink.style.textDecoration = 'underline'
-  
 
-
-
-// Direct to accept answer // WIP
-// let direct = 'WIP' // window.location.pathname
-// if (direct == window.location.pathname) {
-//   let acceptedAnswer = document.querySelector(".accepted-answer");
-//   acceptedAnswer.id += ' acceptedLink'
-//   acceptedAnswer.scrollIntoView();
-// }
-
+// Direct to accept answer
+let loc = window.location.search;
+if (loc == "?direct") {
+  acceptedAnswer.scrollIntoView();
+}

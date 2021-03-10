@@ -20,15 +20,14 @@
   "page": "pages/options.html",
   "browser_style": true
   },
-
   "content_scripts": [
     {
       "matches": ["https://*.stackoverflow.com/*", "https://*.stackexchange.com/*"],
       "js": ["olderFlow.js"]
     },
     {
-    "matches": ["*://*.google.com/*"],
-    "js": ["google.js"]
+      "matches": ["*://*.google.com/*"],
+      "js": ["google.js"]
     }
   ]
 
