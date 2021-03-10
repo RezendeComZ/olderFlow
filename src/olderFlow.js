@@ -1,7 +1,7 @@
 /* TODO
-- Create an exception on StackExchange to not use "warning function"
+- Create an option to not use "warning function"
 - Show on Google/Duck/Bing/Yahoo a color tag 'Asked about two years ago'(based on on: https://stackoverflow.com/questions/:id)
-- Customize title
+- Create an option to customize title
 */
 
 let dateNow = new Date();
