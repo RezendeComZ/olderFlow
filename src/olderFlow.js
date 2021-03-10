@@ -39,7 +39,8 @@ function warning(div, emojiOnTitle) {
   function emojiStatus(status) {
     if (status == 'older') emoji = '💾';
     if (status == 'old') emoji = '💿';
-    if (status == 'new') emoji = '🔥';
+    if (status == 'new') emoji = '✳️';
+    if (status == 'hot') emoji = '🔥';
   }
   function titleEmoji() {
     let newTitle = `${emoji} `+ document.querySelector('title').textContent
@@ -64,17 +65,21 @@ function warning(div, emojiOnTitle) {
     warningStyle.style.backgroundColor = 'orange'
     emojiStatus('older')
   }
-  function es6Plus() {
+  function es6Plus(isHot) {
     warningStyle.innerText = 'ES6+';
-    emojiStatus('new')
+    if (isHot) {
+      emojiStatus('hot')
+    } else {
+      emojiStatus('new')      
+    }
     warningStyle.style.backgroundColor = `rgb(50, 205, 50)`
   }
-  // es6 - June 2015 // es6Plus - June 2016
-  if (questionDate.getFullYear() > 2016) {
-    es6Plus();
-  }
-    else if (questionDate.getFullYear() == 2016 && questionDate.getMonth() > 4) {
-    es6Plus();
+  if (questionDate.getFullYear() > 2016 && (dateNow.getTime() - questionDate.getTime()) < 1.555e+10) { // 180 days
+    es6Plus(true); }
+    else if (questionDate.getFullYear() > 2016) {
+    es6Plus(false);
+  } else if (questionDate.getFullYear() == 2016 && questionDate.getMonth() > 4) {
+    es6Plus(false);
   } else if (questionDate.getFullYear() == 2016) {
     es6();    
   } else if (questionDate.getFullYear() == 2015 && questionDate.getMonth() > 4) {
