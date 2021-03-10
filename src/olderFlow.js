@@ -105,7 +105,7 @@ answersAll.forEach(div => {
 })
 
 // First Answer
-let firstAnswerDiv = document.getElementsByClassName('answer accepted-answer')[0].getElementsByClassName('relativetime')[0]
+let firstAnswerDiv = document.getElementsByClassName('answer')[0].getElementsByClassName('relativetime')[0]
 let firstAnswerYear = 20 + firstAnswerDiv.innerText.split(' ')[2].slice(1)
 let firstAnswerDate = new Date(firstAnswerYear, 5)
 let firstAnswerText = ''
@@ -115,22 +115,21 @@ const firstAnswerLinkDiv = document.querySelector(firstAnswerLinkPath)
 
 if (parseInt(firstAnswerYear, 10).toString().length < 4) { // Is recent?
   firstAnswerText = firstAnswerDiv.innerText
-  firstAnswerLinkDiv.outerHTML += `<a><div class="grid--cell ws-nowrap mr16 mb8"><span id="answerLink">✅:: <span style="text-shadow: 2px 2px 7px white; background-color: hsl(90, 100%, 60%); border-radius: 20px; padding: 5px 8px 5px 8px">${firstAnswerText}</span></span></div></a>`;
+  firstAnswerLinkDiv.outerHTML += `<a><div class="grid--cell ws-nowrap mr16 mb8"><span id="answerLink">✅: <span style="text-shadow: 2px 2px 7px white; background-color: hsl(90, 100%, 60%); border-radius: 20px; padding: 5px 8px 5px 8px">${firstAnswerText}</span></span></div></a>`;
 } else { // Has 4 numbers on date
   firstAnswerText = firstAnswerDate.getFullYear()
   firstAnswerLinkDiv.outerHTML += `<a><div class="grid--cell ws-nowrap mr16 mb8"><span id="answerLink">✅: <span style="text-shadow: 2px 2px 7px white;">${firstAnswerText}</span></span></div></a>`;
   timeStyleAndProcessing(firstAnswerDate, document.getElementById('answerLink'), false, false)
 }
 
+// Answer Redirect
 let answerLink = document.getElementById('answerLink')
-
-let acceptedAnswer = document.querySelector(".accepted-answer");
-document.querySelector('.accepted-answer').setAttribute('id','acceptedID')
+let acceptedAnswer = document.getElementById('answers') // document.querySelector(".accepted-answer");
+// document.querySelector('.accepted-answer').setAttribute('id','acceptedID')
 
 answerLink.addEventListener('click', () => {
   acceptedAnswer.scrollIntoView();
 })
-
 
 // Direct to accept answer
 let loc = window.location.search;
