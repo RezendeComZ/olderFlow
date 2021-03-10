@@ -2,6 +2,8 @@
 - Create an option to not use "warning function"
 - Show on Google/Duck/Bing/Yahoo a color tag 'Asked about two years ago'(based on on: https://stackoverflow.com/questions/:id)
 - Create an option to customize title
+- Customize emojis
+- Customize color/time/emoji
 */
 
 let dateNow = new Date();
@@ -125,8 +127,6 @@ if (parseInt(firstAnswerYear, 10).toString().length < 4) { // Is recent?
 // Answer Redirect
 let answerLink = document.getElementById('answerLink')
 let acceptedAnswer = document.getElementById('answers') // document.querySelector(".accepted-answer");
-// document.querySelector('.accepted-answer').setAttribute('id','acceptedID')
-
 answerLink.addEventListener('click', () => {
   acceptedAnswer.scrollIntoView();
 })
