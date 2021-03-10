@@ -69,12 +69,16 @@ function warning(div, emojiOnTitle) {
     emojiStatus('new')
     warningStyle.style.backgroundColor = `rgb(50, 205, 50)`
   }
-  if (questionDate.getFullYear() >= 2016 && questionDate.getMonth() > 4) {
+  // es6 - June 2015 // es6Plus - June 2016
+  if (questionDate.getFullYear() > 2016) {
     es6Plus();
-  } else if(questionDate.getFullYear() == 2015 && questionDate.getMonth() > 4) {
-    es6();
-  } else if (questionDate.getFullYear() >= 2016) {
+  }
+    else if (questionDate.getFullYear() == 2016 && questionDate.getMonth() > 4) {
+    es6Plus();
+  } else if (questionDate.getFullYear() == 2016) {
     es6();    
+  } else if (questionDate.getFullYear() == 2015 && questionDate.getMonth() > 4) {
+    es6();
   } else {
     preES6();
   }
