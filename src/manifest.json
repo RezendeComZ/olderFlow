@@ -23,11 +23,15 @@
   "content_scripts": [
     {
       "matches": ["https://*.stackoverflow.com/*", "https://*.stackexchange.com/*"],
-      "js": ["olderFlow.js"]
+      "js": ["./scripts/olderFlow.js"]
     },
     {
       "matches": ["*://*.google.com/*"],
-      "js": ["google.js"]
+      "js": ["./scripts/google.js"]
+    },
+    {
+      "matches": ["*://*.duckduckgo.com/*"],
+      "js": ["./scripts/duckduckgo.js"]
     }
   ]
 
