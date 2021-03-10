@@ -1,12 +1,8 @@
 /* TODO
 - Create an exception on StackExchange to not use "warning function"
 - Show on Google/Duck/Bing/Yahoo a color tag 'Asked about two years ago'(based on on: https://stackoverflow.com/questions/:id)
-- Accepted answer direct link from search
 - Customize title
 */
-
-
-
 
 let dateNow = new Date();
 let warningState = true;
@@ -110,13 +106,13 @@ const firstAnswerLinkDiv = document.querySelector(firstAnswerLinkPath)
 firstAnswerLinkDiv.outerHTML += `<a><div class="grid--cell ws-nowrap mr16 mb8"><span id="answerLink">✅: <span style="text-shadow: 2px 2px 7px white">${firstAnswerDate.getFullYear()}</span></span></div></a>`;
 
 let answerLink = document.getElementById('answerLink')
+
 let acceptedAnswer = document.querySelector(".accepted-answer");
 document.querySelector('.accepted-answer').setAttribute('id','acceptedID')
 
 answerLink.addEventListener('click', () => {
   acceptedAnswer.scrollIntoView();
 })
-
 
 timeStyleAndProcessing(firstAnswerDate, document.getElementById('answerLink'), false, false)
 
