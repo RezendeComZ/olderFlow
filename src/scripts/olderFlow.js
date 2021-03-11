@@ -4,6 +4,7 @@
 - Create an option to customize title
 - Customize emojis
 - Customize color/time/emoji
+- Copy codeblocks to clipboard
 */
 
 let dateNow = new Date();
