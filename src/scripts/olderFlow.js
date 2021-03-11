@@ -1,4 +1,5 @@
 /* TODO
+- Bugfix on recent answers with 'yesteday' and other things
 - Create an option to not use "warning function"
 - Show on Google/Duck/Bing/Yahoo a color tag 'Asked about two years ago'(based on on: https://stackoverflow.com/questions/:id)
 - Create an option to customize title
@@ -108,16 +109,20 @@ answersAll.forEach(div => {
 })
 
 // First Answer
+var regExp = /^[a-zA-Z]+$/;
 let firstAnswerDiv = document.getElementsByClassName('answer')[0].getElementsByClassName('relativetime')[0]
 let firstAnswerYear = 20 + firstAnswerDiv.innerText.split(' ')[2].slice(1)
 let firstAnswerDate = new Date(firstAnswerYear, 5)
 let firstAnswerText = ''
 
-const firstAnswerLinkPath = 'html.html__responsive body.question-page.unified-theme div.container div#content.snippet-hidden div div.inner-content.clearfix div.grid.fw-wrap.pb8.mb16.bb.bc-black-075 div.grid--cell.ws-nowrap.mr16.mb8';
-const firstAnswerLinkDiv = document.querySelector(firstAnswerLinkPath)
-
-if (parseInt(firstAnswerYear, 10).toString().length < 4) { // Is recent?
-  firstAnswerText = firstAnswerDiv.innerText
+const firstAnswerLinkDiv = document.querySelector('div.ws-nowrap:nth-child(1)')
+var is_date = function(input) {
+  if ( Object.prototype.toString.call(input) === "[object Date]" ) 
+    return false;
+  return true;   
+    };
+if (is_date(firstAnswerYear)) { // Is recent?
+  firstAnswerText = firstAnswerDiv.innerText;
   firstAnswerLinkDiv.outerHTML += `<a><div class="grid--cell ws-nowrap mr16 mb8"><span id="answerLink">✅: <span style="text-shadow: 2px 2px 7px white; background-color: hsl(90, 100%, 60%); border-radius: 20px; padding: 5px 8px 5px 8px">${firstAnswerText}</span></span></div></a>`;
 } else { // Has 4 numbers on date
   firstAnswerText = firstAnswerDate.getFullYear()
@@ -137,3 +142,20 @@ let loc = window.location.search;
 if (loc == "?direct") {
   acceptedAnswer.scrollIntoView();
 }
+
+// Copy code // WIP // Provavelmente o usuário precisa disparar clicando em algum coisa, mas não do jeito que tá agora
+// Armazenar antes todos os códigos
+// Colocar um addEvent... para escutar todos os botoes, indentificar o botao e copiar o innerText certo
+function copyCode(text) {
+  return navigator.clipboard.writeText(text)
+}
+
+pre = document.querySelectorAll('pre')
+
+pre.forEach(code => {
+  let codeToCopy = code.innerText
+  code.innerHTML += `<br><button onclick="copyCode(${codeToCopy})">Copy</button>`
+  console.log(codeToCopy)
+})
+
+
