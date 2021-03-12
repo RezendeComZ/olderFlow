@@ -1,13 +1,3 @@
-/* TODO
-- Bugfix on recent answers with 'yesteday' and other things
-- Create an option to not use "warning function"
-- Show on Google/Duck/Bing/Yahoo a color tag 'Asked about two years ago'(based on on: https://stackoverflow.com/questions/:id)
-- Create an option to customize title
-- Customize emojis
-- Customize color/time/emoji
-- Copy codeblocks to clipboard
-*/
-
 let dateNow = new Date();
 let warningState = true;
 let emojiState = true;

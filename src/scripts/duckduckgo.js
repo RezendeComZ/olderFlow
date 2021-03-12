@@ -1,5 +1,3 @@
-// Copy code has a bug with some tags, but work
-
 let results = [];
 
 let stackoverflow = Array.from(document.querySelectorAll('.result__a')).filter(link => link.href.includes('stackoverflow'))

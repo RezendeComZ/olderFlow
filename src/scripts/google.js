@@ -1,8 +1,6 @@
 function qSelector(select) {
   return document.querySelector(select)
 }
-// Google
-
 let datesTxtDivs = document.querySelectorAll('.f') // Google - Dates
 
 datesTxtDivs.forEach(element => {
