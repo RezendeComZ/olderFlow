@@ -143,19 +143,19 @@ if (loc == "?direct") {
   acceptedAnswer.scrollIntoView();
 }
 
-// Copy code // WIP // Provavelmente o usuário precisa disparar clicando em algum coisa, mas não do jeito que tá agora
-// Armazenar antes todos os códigos
-// Colocar um addEvent... para escutar todos os botoes, indentificar o botao e copiar o innerText certo
-function copyCode(text) {
-  return navigator.clipboard.writeText(text)
-}
+// Copy code
 
-pre = document.querySelectorAll('pre')
+let pre = document.querySelectorAll('pre')
+
+let codesToCopy = []
 
 pre.forEach(code => {
-  let codeToCopy = code.innerText
-  code.innerHTML += `<br><button onclick="copyCode(${codeToCopy})">Copy</button>`
-  console.log(codeToCopy)
+  codesToCopy.push(code.innerText)
+  code.innerHTML += `<br><button class="copyB" id="code${codesToCopy.length}">Copy</button>`
 })
 
-
+document.querySelectorAll('.copyB').forEach(item => {
+  item.addEventListener('click', event => {
+    navigator.clipboard.writeText(event.explicitOriginalTarget.parentElement.childNodes[0].innerText)
+  })
+})
