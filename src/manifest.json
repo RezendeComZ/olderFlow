@@ -9,7 +9,7 @@
    "url": "https://github.com/rezendecomz/olderFlow"
   },
 
-  "description": "A WIP WebExtension",
+  "description": "A extension made to facilitate the search process on Q&A sites using colors, copy buttons and shortcuts. For now is compatible with Stackoverflow and Stackexchange. Search compatible with Google and DuckDuckGo.",
 
   "icons": {
     "48": "icons/olderFlow-48.png",
