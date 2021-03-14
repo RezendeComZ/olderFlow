@@ -1,4 +1,4 @@
-# ![OlderFlow logo](https://raw.githubusercontent.com/rezendecomz/olderFlow/main/icon/olderFlow_readmeLogo_.png) OlderFlow
+# ![OlderFlow logo](https://raw.githubusercontent.com/rezendecomz/olderFlow/main/icon/olderFlow_readmeLogo.png) OlderFlow
 
 A WebExtension for Firefox (coming soon for Chrome, Safari, Opera and Edge), made to facilitate the search process on Q&A sites using colors, copy buttons and shortcuts. For now is compatible with Stackoverflow and Stackexchange. Search compatible with Google and DuckDuckGo.
 
