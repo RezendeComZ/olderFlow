@@ -20,7 +20,6 @@ Main features:
 
 TODO:
 
-- Bugfix on recent answers with 'yesteday' and other things
 - Create an option to not use "warning function"
 - Show on Google/Duck/Bing/Yahoo a color tag 'Asked about two years ago'(based on: https://stackoverflow.com/questions/:id)
 - Create an option to customize title
@@ -35,4 +34,4 @@ Logo created using mixed arts from [Kiranshastry](https://www.flaticon.com/autho
 
 Known issues:
 - DuckDuckGo: 'Copy code' function has a bug with some tags, copying more than necessary, but work.
-- Some direct links to texts without numbers like "yesterday" cannot be colored.
+- Some direct links to answers texts without numbers like "yesterday" cannot be colored.
