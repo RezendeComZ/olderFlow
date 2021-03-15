@@ -1,6 +1,6 @@
 # ![OlderFlow logo](https://raw.githubusercontent.com/rezendecomz/olderFlow/main/icon/OlderFlow_readmeLogo.png) OlderFlow
 
-A WebExtension for Firefox (coming soon for Chrome, Safari, Opera and Edge), made to facilitate the search process on Q&A sites using colors, copy buttons and shortcuts. For now is compatible with Stackoverflow and Stackexchange. Search compatible with Google and DuckDuckGo.
+A WebExtension for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/olderflow/) (coming soon for Chrome, Safari, Opera and Edge), made to facilitate the search process on Q&A sites using colors, copy buttons and shortcuts. For now is compatible with Stackoverflow and Stackexchange. Search compatible with Google and DuckDuckGo.
 
 [![PayMeaCoffe](https://raw.githubusercontent.com/rezendecomz/olderFlow/main/screenshots/donate/buymeacoffe.png "Donate with PayPal")](https://www.buymeacoffee.com/rezendecomz) [![Doar com PagSeguro](https://raw.githubusercontent.com/rezendecomz/olderFlow/main/screenshots/donate/pagseguro.gif "Doar com pagseguro")](https://pag.ae/7WXNGdfg4)
 
@@ -26,6 +26,10 @@ TODO:
 - Create an option to customize title
 - Customize emojis
 - Customize color/time/emoji
+
+Download:
+- Firefox](https://addons.mozilla.org/en-US/firefox/addon/olderflow/)
+- Google Chrome (coming soon)
 
 Logo created using mixed arts from [Kiranshastry](https://www.flaticon.com/authors/kiranshastry)
 
