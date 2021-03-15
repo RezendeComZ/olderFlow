@@ -1,3 +1,5 @@
+window.addEventListener('load', () => { // Chrome exclusive
+
 let results = [];
 
 let stackoverflow = Array.from(document.querySelectorAll('.result__a')).filter(link => link.href.includes('stackoverflow'))
@@ -30,3 +32,4 @@ document.querySelectorAll('.copyB').forEach(item => {
         navigator.clipboard.writeText(event.explicitOriginalTarget.parentElement.innerText.slice(0, -4))
   })
 })
+} )
