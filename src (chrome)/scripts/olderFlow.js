@@ -133,7 +133,7 @@ if (loc == "?direct") {
   acceptedAnswer.scrollIntoView();
 }
 
-// Copy code // Chrome Exclusive Chrome WIP // ref: https://stackoverflow.com/questions/51805395/navigator-clipboard-is-undefined
+// Copy code // Chrome Exclusive Chrome
 
 let pre = Array.from(document.querySelectorAll('pre'))
 
@@ -141,16 +141,14 @@ let codesToCopy = []
 
 pre.forEach(code => {
   codesToCopy.push(code.innerText)
-  code.innerHTML += `<br><button class="copyB" id="code${codesToCopy.length}">Copy</button>`
+  code.outerHTML += `<button class="copyB" id="code${codesToCopy.length}" style="    margin-bottom: 10px;">Copy</button><br>`
 })
 
-document.querySelectorAll('.copyB').forEach(item => {
+Array.from(document.querySelectorAll('.copyB')).forEach(item => {
+  item.previousElementSibling.style.marginBottom = '5px';
   item.addEventListener('click', event => {
-    let code = event.target.parentElement
-    console.log(code)
-    
-    // return navigator.clipboard.writeText(code) // event.target.parentElement.innerText
+    console.log('copied')
+    let code = event.target.previousElementSibling.children[0].innerText
+    return navigator.clipboard.writeText(code)
   })
 })
-
-
