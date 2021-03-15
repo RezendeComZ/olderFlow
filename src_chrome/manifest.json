@@ -1,7 +1,7 @@
 {
 
   "name": "OlderFlow",
-  "description": "A extension made to facilitate the search process on Q&A sites using colors, copy buttons and shortcuts. For now is compatible with Stackoverflow and Stackexchange. Search compatible with Google and DuckDuckGo.",
+  "description": "Made to facilitate the search process on Q&A sites using colors, copy buttons and shortcuts. Compatible with Stackoverflow, Stackexchange, Google and DuckDuckGo.",
   "version": "1.0",
   "manifest_version": 2,
   
