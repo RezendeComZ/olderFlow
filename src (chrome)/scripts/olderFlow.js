@@ -133,7 +133,7 @@ if (loc == "?direct") {
   acceptedAnswer.scrollIntoView();
 }
 
-// Copy code
+// Copy code // Chrome Exclusive Chrome WIP // ref: https://stackoverflow.com/questions/51805395/navigator-clipboard-is-undefined
 
 let pre = Array.from(document.querySelectorAll('pre'))
 
