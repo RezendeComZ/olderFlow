@@ -1,15 +1,11 @@
 {
 
-  "manifest_version": 2,
   "name": "OlderFlow",
-  "version": "1.0",
-
-  "developer": {
-  "name": "Gabriel Rezende",
-   "url": "https://github.com/rezendecomz/olderFlow"
-  },
-
   "description": "A extension made to facilitate the search process on Q&A sites using colors, copy buttons and shortcuts. For now is compatible with Stackoverflow and Stackexchange. Search compatible with Google and DuckDuckGo.",
+  "version": "1.0",
+  "manifest_version": 2,
+  
+  "author": "Gabriel Rezende",
 
   "icons": {
     "48": "icons/olderFlow-48.png",
