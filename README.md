@@ -28,10 +28,11 @@ TODO:
 - Customize color/time/emoji
 
 Download:
-- Firefox](https://addons.mozilla.org/en-US/firefox/addon/olderflow/)
+- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/olderflow/)
 - Google Chrome (coming soon)
 
 Logo created using mixed arts from [Kiranshastry](https://www.flaticon.com/authors/kiranshastry)
 
 Known issues:
-DuckDuckGo: 'Copy code' function has a bug with some tags, copying more than necessary, but work.
+- DuckDuckGo: 'Copy code' function has a bug with some tags, copying more than necessary, but work.
+- Some direct links to texts without numbers like "yesterday" cannot be colored.
