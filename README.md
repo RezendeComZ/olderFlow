@@ -1,6 +1,6 @@
 # ![OlderFlow logo](https://raw.githubusercontent.com/rezendecomz/olderFlow/main/icon/OlderFlow_readmeLogo.png) OlderFlow
 
-A WebExtension for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/olderflow/) and [Google Chrome](hhttps://chrome.google.com/webstore/detail/olderflow/eefooohfadkajapciekcgiapibdlicld)(coming soon for Safari, Opera and Edge), made to facilitate the search process on Q&A sites using colors, copy buttons and shortcuts. For now is compatible with Stackoverflow and Stackexchange. Search compatible with Google and DuckDuckGo.
+A WebExtension for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/olderflow/) and [Google Chrome](https://chrome.google.com/webstore/detail/olderflow/eefooohfadkajapciekcgiapibdlicld)(coming soon for Safari, Opera and Edge), made to facilitate the search process on Q&A sites using colors, copy buttons and shortcuts. For now is compatible with Stackoverflow and Stackexchange. Search compatible with Google and DuckDuckGo.
 
 [![PayMeaCoffe](https://raw.githubusercontent.com/rezendecomz/olderFlow/main/screenshots/donate/buymeacoffe.png "Donate with PayPal")](https://www.buymeacoffee.com/rezendecomz) [![Doar com PagSeguro](https://raw.githubusercontent.com/rezendecomz/olderFlow/main/screenshots/donate/pagseguro.gif "Doar com pagseguro")](https://pag.ae/7WXNGdfg4)
 
@@ -28,7 +28,7 @@ TODO:
 
 Download:
 - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/olderflow/)
-- [Google Chrome](hhttps://chrome.google.com/webstore/detail/olderflow/eefooohfadkajapciekcgiapibdlicld)
+- [Google Chrome](https://chrome.google.com/webstore/detail/olderflow/eefooohfadkajapciekcgiapibdlicld)
 
 Logo created using mixed arts from [Kiranshastry](https://www.flaticon.com/authors/kiranshastry)
 
