@@ -9,7 +9,7 @@ function timeStyleAndProcessing(date, div, warningIsOn, emojiOnTitle) {
   div.style.color = 'white'
   div.style.padding = '5px 8px 5px 8px'
   div.style.borderRadius = '20px'
-  let daysInHSL = parseInt((360 * differenceInDays(date)) / 3600) // 360 (HSL max value), 3600 (10 years) 
+  let daysInHSL = parseInt((360 * differenceInDays(date)) / 3600) 
   if (daysInHSL > 360) {
     div.style.backgroundColor = `hsl(360, 100%, 60%)`
   } else if (daysInHSL < 90) {
@@ -122,7 +122,7 @@ if (is_date(firstAnswerYear)) { // Is recent?
 
 // Answer Redirect
 let answerLink = document.getElementById('answerLink')
-let acceptedAnswer = document.getElementById('answers') // document.querySelector(".accepted-answer");
+let acceptedAnswer = document.getElementById('answers')
 answerLink.addEventListener('click', () => {
   acceptedAnswer.scrollIntoView();
 })
