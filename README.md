@@ -2,8 +2,6 @@
 
 A WebExtension for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/olderflow/) and [Google Chrome](https://chrome.google.com/webstore/detail/olderflow/eefooohfadkajapciekcgiapibdlicld) (coming soon for Opera, Edge), made to facilitate the search process on Q&A sites using colors, copy buttons and shortcuts. For now is compatible with Stackoverflow and Stackexchange. Search compatible with Google and DuckDuckGo.
 
-[![PayMeaCoffe](https://raw.githubusercontent.com/rezendecomz/olderFlow/main/screenshots/donate/buymeacoffe.png "Donate with PayPal")](https://www.buymeacoffee.com/rezendecomz) [![Doar com PagSeguro](https://raw.githubusercontent.com/rezendecomz/olderFlow/main/screenshots/donate/pagseguro.gif "Doar com pagseguro")](https://pag.ae/7WXNGdfg4)
-
 Main features:
 
 - It processes time and transforms it into colors, red is older and green is newer. It also creates a direct link to the best answer.
